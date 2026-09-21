@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛人-民俗传说与恐怖故事大全</title>
+    <meta name="description" content="毛人专题站，汇集民间传说、恐怖故事、相关影视作品及科学解释。探索中国西南地区关于长毛怪物的神秘记载，提供分类浏览与深度阅读。">
+    <meta name="keywords" content="毛人, 长毛怪物, 民间传说, 恐怖故事, 山海经, 中国怪谈, 灵异">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-red: #b71c1c;
+            --accent-gold: #ffb300;
+            --border-color: #333;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-color)), url('https://picsum.photos/seed/monster/1200/600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-red);
+            display: inline-block;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-color: var(--accent-gold);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #2a2a2a;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* List Layout */
+        .list-item {
+            display: flex;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .list-thumb {
+            width: 160px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .list-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .list-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #252525;
+            color: var(--accent-gold);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-gold);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .list-item {
+                flex-direction: column;
+            }
+
+            .list-thumb {
+                width: 100%;
+                height: 180px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>👁️</span> 毛人档案
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#legend" class="active">民间传说</a></li>
+                <li><a href="#stories">恐怖故事</a></li>
+                <li><a href="#records">文献记载</a></li>
+                <li><a href="#faq">常见问答</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探寻毛人传说</h1>
+            <p>中国西南深山中流传千年的长毛怪物传说，究竟是远古生物的残存，还是人类对未知的想象？</p>
+            <a href="#legend" class="btn">开始探索</a>
+        </div>
+    </section>
+
+    <!-- 1. 民间传说分类 -->
+    <section id="legend" class="container">
+        <h2 class="section-title">民间传说与目击报告</h2>
+        <div class="grid-3">
+            <article class="card">
+                <img src="https://picsum.photos/seed/mountain/400/250" alt="深山背景" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">四川盆地</span>
+                    <h3 class="card-title">凉山毛人事件</h3>
+                    <p class="card-excerpt">关于四川凉山地区流传的毛人目击事件，当地人称其为“罗罗”，据说其形似人但全身长满黑色长毛，力大无穷。</p>
+                    <div class="card-footer">
+                        <span>来源: 民间口述</span>
+                        <a href="#">阅读更多 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/forest/400/250" alt="原始森林" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">湘西大山</span>
+                    <h3 class="card-title">湘西长毛怪</h3>
+                    <p class="card-excerpt">结合了湘西赶尸与野人的概念，描述一种在深山老林中行走的直立长毛生物，常在夜间出没。</p>
+                    <div class="card-footer">
+                        <span>来源: 民间口述</span>
+                        <a href="#">阅读更多 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/fog/400/250" alt="迷雾山峦" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">云贵高原</span>
+                    <h3 class="card-title">云岭长毛人</h3>
+                    <p class="card-excerpt">云南边境流传的一种生物，不同于北方野人，云岭毛人更善于攀爬，据说能发出类似婴儿的啼哭声。</p>
+                    <div class="card-footer">
+                        <span>来源: 民间口述</span>
+                        <a href="#">阅读更多 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 2. 详细故事列表 -->
+    <section id="stories" class="container">
+        <h2 class="section-title">经典故事集锦</h2>
+        <div class="list-item">
+            <img src="https://picsum.photos/seed/night/300/200" alt="夜行" class="list-thumb">
+            <div class="list-content">
+                <h3 class="list-title">深夜的敲门声：关于村口老树的传说</h3>
+                <p class="card-excerpt">在某个偏远的山村，村民们发现每晚深夜都有人在村口老树附近徘徊。第二天，树下总会留下杂乱的脚印。一位采药人曾声称见过一个浑身长满黑毛的人影，正对着月亮嚎叫...</p>
+                <a href="#" style="color: var(--accent-gold); font-size: 0.9rem;">查看完整故事 &rarr;</a>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="https://picsum.photos/seed/track/300/200" alt="脚印" class="list-thumb">
+            <div class="list-content">
+                <h3 class="list-title">深山猎人的遭遇：关于“罗罗”的记录</h3>
+                <p class="card-excerpt">一位资深猎人在一次追捕野猪的过程中，意外发现了一串奇怪的脚印。脚印大得惊人，脚趾部分呈现出分叉状，且每一步跨度都超过一米。猎人表示，当时他感到一股寒意直冲天灵盖。</p>
+                <a href="#" style="color: var(--accent-gold); font-size: 0.9rem;">查看完整故事 &rarr;</a>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="https://picsum.photos/seed/abandoned/300/200" alt="废弃房屋" class="list-thumb">
+            <div class="list-content">
+                <h3 class="list-title">废弃学校的怪谈</h3>
+                <p class="card-excerpt">有一所位于深山半腰的废弃学校，传闻每逢雷雨夜，校舍二楼走廊就会传来沉重的脚步声。后来清理学校的工人发现，走廊墙壁上附着着许多细软的黑色绒毛，经鉴定并非昆虫排泄物。</p>
+                <a href="#" style="color: var(--accent-gold); font-size: 0.9rem;">查看完整故事 &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 文献与科学解释 -->
+    <section id="records" class="container">
+        <h2 class="section-title">文献记载与科学分析</h2>
+        <div class="grid-3">
+            <div style="grid-column: span 2;">
+                <h3 style="margin-bottom: 15px; color: var(--accent-gold);">古籍中的相似记载</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>文献名称</th>
+                                <th>朝代</th>
+                                <th>相关描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>《山海经·大荒北经》</td>
+                                <td>先秦</td>
+                                <td>记载了一种名为“毛民”的异族，其人身而鸟喙，有翼，能飞，食不火食。</td>
+                            </tr>
+                            <tr>
+                                <td>《酉阳杂俎》</td>
+                                <td>唐代</td>
+                                <td>“毛人”条目下描述了深山中长毛的怪人，力大且行动敏捷。</td>
+                            </tr>
+                            <tr>
+                                <td>《搜神记》</td>
+                                <td>晋代</td>
+                                <td>收录了关于南方山中长毛怪物的志怪故事，多为描述其外貌特征。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 15px; color: var(--accent-gold);">科学解释视角</h3>
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">1. 遗传与基因突变</h4>
+                        <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">极少数人类可能患有“多毛症”，这会导致全身或局部毛发异常浓密。在野外生存环境中，这类个体容易因外貌怪异而被误传为“毛人”。</p>
+                        
+                        <h4 class="card-title">2. 丛林伪装与视觉误差</h4>
+                        <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">在光线昏暗的原始森林中，人眼对颜色的识别能力下降。穿着深色衣服、面部被阴影遮挡或处于蹲伏姿势的人，在远处观察时可能被误认为是直立行走的生物。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 常见问题 FAQ -->
+    <section id="faq" class="container">
+        <h2 class="section-title">常见问题解答</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">毛人是否真的存在？ <span>+</span></div>
+            <div class="faq-answer">目前没有任何确凿的科学证据（如活体标本、DNA样本、清晰照片）证明毛人这一物种存在。现有的目击报告多为无法证实的传闻或对自然现象的误解。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">为什么主要集中在西南地区？ <span>+</span></div>
+            <div class="faq-answer">西南地区（云贵川）地形复杂，森林覆盖率极高，人口密度相对较低，且保留了大量少数民族的原始文化和语言，这为传说和口述历史的传播提供了土壤。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">毛人和野人有什么区别？ <span>+</span></div>
+            <div class="faq-answer">虽然两者都是直立行走的未知生物，但“毛人”通常特指全身覆盖长毛、体态接近人类的传说生物，而“野人”概念更广泛，可能包含更大体型、不同体毛特征的各种生物。</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>毛人档案</h4>
+                <p>致力于整理、记录和探讨中国民间关于长毛怪物的各类传说与文献，为神秘学爱好者提供资料参考。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#legend">民间传说</a></li>
+                    <li><a href="#stories">恐怖故事</a></li>
+                    <li><a href="#records">文献记载</a></li>
+                    <li><a href="#faq">常见问答</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>免责声明</h4>
+                <p style="font-size: 0.8rem;">本站内容仅供娱乐与科普，部分传说源自民间口述，请理性看待，切勿轻信谣言。</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 毛人档案网. 保留所有权利.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ 交互逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // 关闭其他打开的项
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // 切换当前项
+                item.classList.toggle('active');
+                
+                // 更新图标
+                const span = question.querySelector('span');
+                if (item.classList.contains('active')) {
+                    span.textContent = '-';
+                } else {
+                    span.textContent = '+';
+                }
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
