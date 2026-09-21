@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="狮驼岭剧情详解，深入剖析西游记狮驼岭三魔王的背景故事、法宝能力及经典战役，提供详细的章节分析与人物关系图。">
+    <meta name="keywords" content="狮驼岭剧情,西游记,狮驼岭三魔,青狮白象大鹏,西游记解析">
+    <title>狮驼岭剧情-西游记经典篇章深度解析与人物关系</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --bg-color: #FDF5E6;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #E0E0E0;
+            --accent-gold: #FFD700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #5D2906);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "🦁";
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+            transform: rotate(15deg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #5D2906;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Section */
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        .intro-text {
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Timeline / Plot Structure */
+        .plot-timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--border-color);
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            background-color: #F0E6D2;
+            color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .monster-list {
+            list-style: none;
+        }
+
+        .monster-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .monster-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background-color: #eee;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .info h4 {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .info span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .quote-box {
+            font-style: italic;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-answer {
+            padding: 15px 0 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none; /* JS will toggle this */
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .timeline-item::before {
+                left: -37px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">📜 <span>西游演义</span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">狮驼岭剧情</a></li>
+                <li><a href="#">西游全书</a></li>
+                <li><a href="#">人物图鉴</a></li>
+                <li><a href="#">原著赏析</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>狮驼岭剧情详解</h1>
+    <p>西游路上最凶险的篇章之一，深入解析青狮、白象、大鹏金翅雕的三魔组合与孙悟空的绝地反击。</p>
+    <a href="#story" class="cta-button">阅读完整剧情</a>
+</section>
+
+<main class="container">
+    <!-- Left Content -->
+    <section class="content-section" id="story">
+        <h2>剧情背景与开端</h2>
+        <div class="intro-text">
+            <p>狮驼岭，位于西牛贺洲东部，是《西游记》中孙悟空师徒四人西行路上遭遇的<strong>最为惨烈</strong>的关卡。与之前的蜘蛛精、白骨精不同，狮驼岭并非普通的妖洞，而是一个拥有严密组织、庞大军队和完整政治体系的“独立王国”。这一章节（第七十四回至七十七回）在原著中篇幅最长，描写最为详尽，也是孙悟空心理变化最大的地方。</p>
+        </div>
+
+        <div class="plot-timeline">
+            <div class="timeline-item">
+                <h3>1. 猿马失蹄，遭遇埋伏</h3>
+                <p>唐僧师徒行至狮驼岭，孙悟空因去探路，被青毛狮子一口吞入腹中。唐僧与猪八戒、沙僧被狮驼洞的小妖围困。此时，狮驼岭不仅有三大魔王，更有四万八千小妖，甚至包括狮驼国被吃掉的一国军民。</p>
+                <div class="tags">
+                    <span class="tag">险象环生</span>
+                    <span class="tag">孙悟空失踪</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>2. 三魔联手，神通尽展</h3>
+                <p>孙悟空在青狮腹中施展神通，导致青狮消化不良。随后，大鹏金翅雕、白象王赶来支援。三魔联手，大鹏鸟展翅三千余里，速度极快，孙悟空几次试图追赶均告失败，甚至被大鹏用阴阳二气瓶捉住。</p>
+                <div class="tags">
+                    <span class="tag">速度压制</span>
+                    <span class="tag">法器困局</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>3. 求援如来，道高一丈</h3>
+                <p>孙悟空因无法降服大鹏，只得上天庭求助。他先找如来佛祖，如来指出大鹏是文殊、普贤菩萨的坐骑，点明其来历。随后，孙悟空又找来燃灯古佛、弥勒佛等，甚至请出十殿阎罗，才最终制定出捉妖计划。</p>
+                <div class="tags">
+                    <span class="tag">背景揭秘</span>
+                    <span class="tag">佛祖出手</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>4. 雷音寺显圣，魔头归位</h3>
+                <p>在灵山，三魔得知真相后束手就擒。孙悟空挥棒打杀小妖，救出师父。狮驼岭的阴霾随之散去，师徒四人继续西行。这一段剧情不仅展示了妖魔的强大，也体现了佛教势力的强大干预。</p>
+                <div class="tags">
+                    <span class="tag">结局</span>
+                    <span class="tag">师徒重逢</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar">
+        <div class="card">
+            <h3>狮驼岭三魔</h3>
+            <ul class="monster-list">
+                <li class="monster-item">
+                    <div class="avatar">🦁</div>
+                    <div class="info">
+                        <h4>青狮精</h4>
+                        <span>文殊菩萨坐骑</span>
+                    </div>
+                </li>
+                <li class="monster-item">
+                    <div class="avatar">🐘</div>
+                    <div class="info">
+                        <h4>白象精</h4>
+                        <span>普贤菩萨坐骑</span>
+                    </div>
+                </li>
+                <li class="monster-item">
+                    <div class="avatar">🦅</div>
+                    <div class="info">
+                        <h4>大鹏金翅雕</h4>
+                        <span>如来佛祖舅舅</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="quote-box">
+                “大王叫我来巡山，抓个和尚做晚餐！”——小妖歌谣
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>经典法宝</h3>
+            <ul class="monster-list">
+                <li class="monster-item">
+                    <div class="info">
+                        <h4>阴阳二气瓶</h4>
+                        <p>大鹏所持，能吞吐火焰，孙悟空曾险些葬身其中。</p>
+                    </div>
+                </li>
+                <li class="monster-item">
+                    <div class="info">
+                        <h4>金刚琢</h4>
+                        <p>太上老君所制，曾打伤孙悟空，后被大鹏所得。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<section class="container">
+    <div class="faq-section">
+        <h2>常见问题解析</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">狮驼岭在原著中是否被删减？</div>
+            <div class="faq-answer">
+                在很多影视改编中，狮驼岭剧情往往被大幅删减或改编。但在86版电视剧中，狮驼岭依然是重头戏，特别是孙悟空痛哭的情节，极具感染力。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">为什么孙悟空在狮驼岭如此狼狈？</div>
+            <div class="faq-answer">
+                因为狮驼岭的妖怪背景极其深厚。大鹏鸟是如来的娘舅，青狮白象是菩萨坐骑。孙悟空虽然法力高强，但在面对这种“高层关系网”时，必须先解决妖怪的“后台”问题，因此战斗过程异常艰难。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">狮驼岭与狮驼国是什么关系？</div>
+            <div class="faq-answer">
+                在原著中，狮驼岭与狮驼国是相连的。大鹏鸟及其小妖不仅吃人，更统治了整个国家，将国王吃掉后，由小妖冒充国王统治，导致整个国家上下都是妖怪。
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2023 西游演义解析站 - 专注经典文学内容整理与分享</p>
+    <p>内容仅供学习交流，不代表原著确切历史背景。</p>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
