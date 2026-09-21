@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>追新番-最新动漫资讯、放送表与高清番剧推荐</title>
+    <meta name="description" content="追新番为您提供最新最全的日本动漫资讯，包括最新番剧放送时间表、高清在线观看指南、热门番剧评分及深度评测。一站式解决您的追番需求，不错过任何一部精彩作品。">
+    <meta name="keywords" content="追新番,动漫资讯,新番放送表,日本动漫,番剧推荐,在线观看">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #ff6b6b;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-sub: #7f8c8d;
+            --border-radius: 12px;
+            --container-width: 1200px;
+            --nav-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--nav-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .more-link {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Schedule Section */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .schedule-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .schedule-card .time {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+
+        .schedule-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .schedule-card .info {
+            padding: 10px;
+        }
+
+        .schedule-card .title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .schedule-card .studio {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .anime-card {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .anime-card:hover {
+            transform: scale(1.01);
+        }
+
+        .anime-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .anime-card .details {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .anime-card .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .anime-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .anime-card .meta {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+        }
+
+        .anime-card .desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .anime-card .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #357abd;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+
+        .ranking-list li {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ranking-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 25px;
+            height: 25px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .rank-num.top-1 { background: #ff6b6b; color: white; }
+        .rank-num.top-2 { background: #feca57; color: white; }
+        .rank-num.top-3 { background: #48dbfb; color: white; }
+
+        .rank-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .rank-info span {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .hero-tags {
+                justify-content: center;
+            }
+            .hero-image img {
+                max-width: 100%;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .anime-card {
+                flex-direction: column;
+            }
+            .anime-card img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">追新番</a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">最新放送</a>
+                <a href="#">热门榜单</a>
+                <a href="#">新番资讯</a>
+                <a href="#">番剧分类</a>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>不错过每一季的精彩</h1>
+                    <p>全网最及时的日本动漫放送表、更新进度查询与高清番剧推荐。从热血少年到治愈日常，这里应有尽有。</p>
+                    <div class="hero-tags">
+                        <span class="tag">🔥 热门连载</span>
+                        <span class="tag">📺 正在更新</span>
+                        <span class="tag">🏆 高分佳作</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder image representing anime art -->
+                    <img src="https://picsum.photos/seed/animehero/400/300" alt="Featured Anime" width="400" height="300">
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Weekly Schedule -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">本周放送表</h2>
+                    <a href="#" class="more-link">查看日历 &rarr;</a>
+                </div>
+                <div class="schedule-grid">
+                    <!-- Card 1 -->
+                    <div class="schedule-card">
+                        <span class="time">周六 01:30</span>
+                        <img src="https://picsum.photos/seed/anime1/200/180" alt="Anime Cover">
+                        <div class="info">
+                            <div class="title">关于我转生变成史莱姆这档事 第三季</div>
+                            <div class="studio">8bit / Studio Bind</div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="schedule-card">
+                        <span class="time">周六 01:30</span>
+                        <img src="https://picsum.photos/seed/anime2/200/180" alt="Anime Cover">
+                        <div class="info">
+                            <div class="title">蓝色监狱 第二季</div>
+                            <div class="studio">8bit</div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="schedule-card">
+                        <span class="time">周六 00:00</span>
+                        <img src="https://picsum.photos/seed/anime3/200/180" alt="Anime Cover">
+                        <div class="info">
+                            <div class="title">我推的孩子</div>
+                            <div class="studio">Bones</div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="schedule-card">
+                        <span class="time">周六 00:30</span>
+                        <img src="https://picsum.photos/seed/anime4/200/180" alt="Anime Cover">
+                        <div class="info">
+                            <div class="title">咒术回战 第二季</div>
+                            <div class="studio">MAPPA</div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="schedule-card">
+                        <span class="time">周日 00:30</span>
+                        <img src="https://picsum.photos/seed/anime5/200/180" alt="Anime Cover">
+                        <div class="info">
+                            <div class="title">我独自升级</div>
+                            <div class="studio">A-1 Pictures</div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="schedule-card">
+                        <span class="time">周日 01:00</span>
+                        <img src="https://picsum.photos/seed/anime6/200/180" alt="Anime Cover">
+                        <div class="info">
+                            <div class="title">药屋少女的呢喃</div>
+                            <div class="studio">Studio Bind</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Area -->
+            <div class="content-grid">
+                <!-- Left Column: Latest News & Reviews -->
+                <section class="main-column">
+                    <div class="section-header">
+                        <h2 class="section-title">新番资讯与评测</h2>
+                    </div>
+
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/anime7/200/150" alt="Anime Poster">
+                        <div class="details">
+                            <div class="header">
+                                <h3><a href="#">新作动画《异世界药局》定档 10 月开播</a></h3>
+                                <span class="meta">资讯 · 2小时前</span>
+                            </div>
+                            <p class="desc">备受期待的医疗异世界题材新作终于确定首播时间，制作阵容豪华，官方发布了全新的角色海报。</p>
+                            <div class="actions">
+                                <span class="meta">9.2分 · 预订必看</span>
+                                <button class="btn btn-outline">阅读详情</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/anime8/200/150" alt="Anime Poster">
+                        <div class="details">
+                            <div class="header">
+                                <h3><a href="#">《间谍过家家》第四季制作决定，时隔两年回归</a></h3>
+                                <span class="meta">资讯 · 5小时前</span>
+                            </div>
+                            <p class="desc">阿尼亚与间谍家庭的日常故事将再次开启，WIT STUDIO 承诺带来更加细腻的作画质量。</p>
+                            <div class="actions">
+                                <span class="meta">9.5分 · 经典续作</span>
+                                <button class="btn btn-outline">阅读详情</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/anime9/200/150" alt="Anime Poster">
+                        <div class="details">
+                            <div class="header">
+                                <h3><a href="#">本周新番观后感：从《电锯人》看热血番的进化</a></h3>
+                                <span class="meta">评论 · 昨天</span>
+                            </div>
+                            <p class="desc">深度解析近期热门动作番剧在叙事节奏与画面表现上的创新之处，探讨新时代少年漫的走向。</p>
+                            <div class="actions">
+                                <span class="meta">3.5万阅读</span>
+                                <button class="btn btn-outline">阅读详情</button>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="sidebar">
+                    <!-- Ranking -->
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h3 class="section-title">本周热门</h3>
+                        </div>
+                        <ul class="ranking-list">
+                            <li>
+                                <span class="rank-num top-1">1</span>
+                                <div class="rank-info">
+                                    <h4><a href="#">我推的孩子</a></h4>
+                                    <span>评分 9.6</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num top-2">2</span>
+                                <div class="rank-info">
+                                    <h4><a href="#">电锯人</a></h4>
+                                    <span>评分 9.4</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">3</span>
+                                <div class="rank-info">
+                                    <h4><a href="#">咒术回战</a></h4>
+                                    <span>评分 9.3</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <div class="rank-info">
+                                    <h4><a href="#">孤独摇滚</a></h4>
+                                    <span>评分 9.2</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <div class="rank-info">
+                                    <h4><a href="#">药屋少女的呢喃</a></h4>
+                                    <span>评分 9.1</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h3 class="section-title">分类浏览</h3>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                            <a href="#" class="tag" style="background: #eee; color: #333;">热血</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">恋爱</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">治愈</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">科幻</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">悬疑</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">机战</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">运动</a>
+                            <a href="#" class="tag" style="background: #eee; color: #333;">异世界</a>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h3 style="margin-bottom: 10px;">订阅更新</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; opacity: 0.9;">第一时间获取下周放送表，不错过任何一部想看的番剧。</p>
+                        <input type="email" placeholder="您的邮箱地址" style="width: 100%; padding: 10px; border-radius: 6px; border: none; margin-bottom: 10px;">
+                        <button class="btn" style="width: 100%; background: white; color: var(--primary-color);">立即订阅</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于追新番</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        追新番致力于为动漫爱好者提供最及时、最准确的放送信息与观看指南。我们不仅关注新番动态，更致力于挖掘每一部作品的独特魅力。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">最新放送</a></li>
+                        <li><a href="#">番剧排行榜</a></li>
+                        <li><a href="#">资讯中心</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门标签</h4>
+                    <ul>
+                        <li><a href="#">热血漫</a></li>
+                        <li><a href="#">治愈系</a></li>
+                        <li><a href="#">京阿尼</a></li>
+                        <li><a href="#">新番推荐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系与合作</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">广告投放</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 追新番 All Rights Reserved. 本站内容仅供学习交流，请支持正版。
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
