@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩剧《可爱的你》在线观看平台，提供高清全集资源、剧情介绍、角色分析及追剧指南。专注于治愈系浪漫爱情故事，为您带来最舒适的观剧体验。">
+    <meta name="keywords" content="韩剧可爱的你,可爱的你韩剧,可爱的你全集,可爱的你在线观看,治愈系韩剧">
+    <title>韩剧可爱的你-治愈系浪漫爱情故事与在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --primary-dark: #e0566b;
+            --secondary-color: #ff9f43;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --bg-body: #f1f2f6;
+            --bg-card: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            padding: 15px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 107, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaa7 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(255, 107, 129, 0.1);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Main Layout */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            position: relative;
+            aspect-ratio: 2/3;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .card-play-btn {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .card-play-btn::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 15px solid var(--primary-color);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 3px;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .rating {
+            color: #ffc107;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Character Section */
+        .character-section {
+            background-color: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .character-grid {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .character-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .character-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .character-blob {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: linear-gradient(45deg, #ff9ff3, #feca57);
+            top: -10%;
+            left: -10%;
+            z-index: -1;
+            border-radius: 20px;
+            opacity: 0.2;
+        }
+
+        .character-details {
+            flex: 1;
+        }
+
+        .character-details h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .character-desc {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .character-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .char-item {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .char-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .char-info h4 {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .char-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #b2bec3;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid-4 { grid-template-columns: repeat(3, 1fr); }
+            .character-grid { flex-direction: column; }
+            .character-image { width: 100%; max-width: 500px; margin: 0 auto; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Simplified mobile nav for demo */
+            .header-actions { display: none; }
+            .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero { height: 500px; }
+        }
+
+        @media (max-width: 480px) {
+            .grid-4, .grid-3 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color);">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+                <span>韩剧可爱的你</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">剧集列表</a></li>
+                    <li><a href="#">角色介绍</a></li>
+                    <li><a href="#">高清资源</a></li>
+                    <li><a href="#">评论讨论</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">立即观看</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="https://picsum.photos/seed/lovedrama/1920/1080" alt="韩剧可爱的你背景" class="hero-bg">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">2024年热播 / 治愈系</span>
+                    <h1>韩剧《可爱的你》<br>寻找爱的温暖旅程</h1>
+                    <p>一部关于重逢、成长与治愈的浪漫爱情剧。在繁忙的都市中，两颗孤独的心因命运交织，重新点燃对生活的热爱。</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <strong>9.2</strong>
+                            <span>豆瓣评分</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>12</strong>
+                            <span>集数</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>TVN</strong>
+                            <span>出品方</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="btn btn-primary" style="padding: 12px 30px; font-size: 1rem;">开始观看全集</button>
+                        <button class="btn btn-outline" style="padding: 12px 30px; font-size: 1rem;">加入片单</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Spotlight -->
+        <section class="character-section">
+            <div class="container">
+                <div class="character-grid">
+                    <div class="character-image">
+                        <div class="character-blob"></div>
+                        <img src="https://picsum.photos/seed/leadactor/600/700" alt="主角剧照">
+                    </div>
+                    <div class="character-details">
+                        <h3>关于这部剧</h3>
+                        <p class="character-desc">
+                            《可爱的你》不仅仅是一部简单的爱情剧，它更像是一本关于生活的随笔。故事讲述了失去记忆的女主角在小镇上重新找回自我，并与男主角在一次次偶然的相遇中，逐渐揭开尘封的秘密。剧集以其细腻的情感刻画和唯美的画面风格，打动了无数观众的心。
+                        </p>
+                        <div class="character-list">
+                            <div class="char-item">
+                                <img src="https://picsum.photos/seed/char1/100/100" alt="角色头像" class="char-avatar">
+                                <div class="char-info">
+                                    <h4>林在熙 (女主角)</h4>
+                                    <p>纯真善良，充满治愈力</p>
+                                </div>
+                            </div>
+                            <div class="char-item">
+                                <img src="https://picsum.photos/seed/char2/100/100" alt="角色头像" class="char-avatar">
+                                <div class="char-info">
+                                    <h4>金泰宇 (男主角)</h4>
+                                    <p>外冷内热，守护者形象</p>
+                                </div>
+                            </div>
+                            <div class="char-item">
+                                <img src="https://picsum.photos/seed/char3/100/100" alt="角色头像" class="char-avatar">
+                                <div class="char-info">
+                                    <h4>朴智恩 (配角)</h4>
+                                    <p>阳光开朗，最佳损友</p>
+                                </div>
+                            </div>
+                            <div class="char-item">
+                                <img src="https://picsum.photos/seed/char4/100/100" alt="角色头像" class="char-avatar">
+                                <div class="char-info">
+                                    <h4>张社长</h4>
+                                    <p>小镇咖啡馆老板，人生导师</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Picks Section -->
+        <section class="container" style="margin-top: 60px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>热门推荐</h2>
+                    <p>根据您的喜好为您精选的高分剧集</p>
+                </div>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-4">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">热门</span>
+                        <img src="https://picsum.photos/seed/drama1/400/600" alt="推荐剧集封面">
+                        <div class="card-overlay">
+                            <a href="#" class="card-play-btn"></a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">爱的迫降</h3>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.4</span>
+                            <span>16集</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">新剧</span>
+                        <img src="https://picsum.photos/seed/drama2/400/600" alt="推荐剧集封面">
+                        <div class="card-overlay">
+                            <a href="#" class="card-play-btn"></a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">请回答1988</h3>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.7</span>
+                            <span>20集</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">经典</span>
+                        <img src="https://picsum.photos/seed/drama3/400/600" alt="推荐剧集封面">
+                        <div class="card-overlay">
+                            <a href="#" class="card-play-btn"></a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">太阳的后裔</h3>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.1</span>
+                            <span>16集</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-badge">完结</span>
+                        <img src="https://picsum.photos/seed/drama4/400/600" alt="推荐剧集封面">
+                        <div class="card-overlay">
+                            <a href="#" class="card-play-btn"></a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">鬼怪</h3>
+                        <div class="card-meta">
+                            <span class="rating">★ 9.3</span>
+                            <span>16集</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Latest Updates -->
+        <section class="container" style="margin-top: 60px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>最新更新</h2>
+                    <p>紧跟剧集播出进度，不错过任何一集</p>
+                </div>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <article class="card" style="display: flex; flex-direction: row; height: 180px;">
+                    <div class="card-image" style="width: 160px; flex-shrink: 0; aspect-ratio: auto;">
+                        <img src="https://picsum.photos/seed/update1/300/200" alt="更新预告">
+                    </div>
+                    <div class="card-info" style="display: flex; flex-direction: column; justify-content: center; padding: 0 20px;">
+                        <h3 class="card-title" style="font-size: 1rem; margin-bottom: 5px;">第8集：回忆的碎片</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px;">发布于 2小时前</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600;">立即观看 &rarr;</span>
+                    </div>
+                </article>
+                <article class="card" style="display: flex; flex-direction: row; height: 180px;">
+                    <div class="card-image" style="width: 160px; flex-shrink: 0; aspect-ratio: auto;">
+                        <img src="https://picsum.photos/seed/update2/300/200" alt="更新预告">
+                    </div>
+                    <div class="card-info" style="display: flex; flex-direction: column; justify-content: center; padding: 0 20px;">
+                        <h3 class="card-title" style="font-size: 1rem; margin-bottom: 5px;">第9集：意外的告白</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px;">发布于 1天前</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600;">立即观看 &rarr;</span>
+                    </div>
+                </article>
+                <article class="card" style="display: flex; flex-direction: row; height: 180px;">
+                    <div class="card-image" style="width: 160px; flex-shrink: 0; aspect-ratio: auto;">
+                        <img src="https://picsum.photos/seed/update3/300/200" alt="更新预告">
+                    </div>
+                    <div class="card-info" style="display: flex; flex-direction: column; justify-content: center; padding: 0 20px;">
+                        <h3 class="card-title" style="font-size: 1rem; margin-bottom: 5px;">第10集：抉择时刻</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px;">发布于 3天前</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600;">立即观看 &rarr;</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>常见问题</h2>
+                        <p>关于韩剧《可爱的你》的观看指南</p>
+                    </div>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>Q: 《可爱的你》在哪里可以看全集？</h4>
+                        <p>A: 您可以在本站直接在线观看高清全集，支持手机、平板和电脑多端播放，无需下载，画质流畅。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Q: 剧集更新频率是怎样的？</h4>
+                        <p>A: 本剧通常每周更新2集，具体更新时间请关注本站首页公告。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Q: 观看是否需要收费？</h4>
+                        <p>A: 本站提供免费的高清观看服务，部分特殊画质或独家花絮可能需要VIP权限。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Q: 遇到播放卡顿怎么办？</h4>
+                        <p>A: 请尝试切换播放源或清理浏览器缓存，如果问题依旧，请联系客服。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>韩剧可爱的你</h3>
+                    <p>专注于提供最优质的韩剧资源与观剧体验，致力于成为粉丝最喜爱的追剧社区。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">最新剧集</a></li>
+                        <li><a href="#">经典回顾</a></li>
+                        <li><a href="#">排行榜</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">观看指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博社区</a></li>
+                        <li><a href="#">粉丝群组</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 韩剧可爱的你资源站. All Rights Reserved. 本站仅用于展示与交流，资源来自网络。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
