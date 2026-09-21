@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蜜桃直播 - 高清实时互动直播平台，提供多元才艺展示、情感陪伴及实时互动体验。汇聚海量主播，涵盖唱歌、舞蹈、游戏、聊天等多种内容类型，打造沉浸式在线娱乐社区。">
+    <meta name="keywords" content="蜜桃直播,高清直播,在线互动,才艺直播,情感陪伴,娱乐社区">
+    <title>蜜桃直播-高清实时互动与多元娱乐平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --primary-hover: #ff4757;
+            --secondary-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --spacing-unit: 16px;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 107, 129, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 32px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .menu-list li {
+            margin-bottom: 8px;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .menu-link:hover, .menu-link.active {
+            background-color: rgba(255, 107, 129, 0.1);
+            color: var(--primary-color);
+        }
+
+        .menu-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Live Cards Grid */
+        .live-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-link {
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .live-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .live-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-cover {
+            position: relative;
+            padding-top: 140%;
+            background-color: #e1e1e1;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ff4757;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .card-tags span {
+            background: #f1f2f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 4px;
+            font-size: 12px;
+        }
+
+        /* Feature Section */
+        .features-section {
+            margin-top: 48px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            margin: 16px 0 8px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #dfe4ea;
+            margin-top: 64px;
+            padding: 48px 0 24px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            opacity: 0.7;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                flex-direction: column;
+                padding: 12px;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                display: none; /* Simplified for mobile demo */
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                <span>蜜桃直播</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">推荐</a>
+                <a href="#">分类</a>
+                <a href="#">游戏</a>
+                <a href="#">秀场</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>发现精彩，即时互动</h1>
+                <p>加入蜜桃直播，与百万主播实时连麦，分享你的生活点滴与才艺展示。</p>
+                <div class="hero-tags">
+                    <span class="tag">🎤 唱歌</span>
+                    <span class="tag">💃 舞蹈</span>
+                    <span class="tag">🎮 游戏</span>
+                    <span class="tag">💬 闲聊</span>
+                    <span class="tag">🎨 创意</span>
+                </div>
+                <a href="#" class="btn btn-primary" style="padding: 12px 36px; font-size: 16px;">立即开播</a>
+            </div>
+        </section>
+
+        <div class="main-container">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <ul class="menu-list">
+                    <li><a href="#" class="menu-link active"><i>🔥</i>热门推荐</a></li>
+                    <li><a href="#" class="menu-link"><i>⭐</i>最新开播</a></li>
+                    <li><a href="#" class="menu-link"><i>👑</i>人气榜单</a></li>
+                    <li><a href="#" class="menu-link"><i>🎵</i>音乐专区</a></li>
+                    <li><a href="#" class="menu-link"><i>🎮</i>游戏竞技</a></li>
+                    <li><a href="#" class="menu-link"><i>💄</i>颜值才艺</a></li>
+                    <li><a href="#" class="menu-link"><i>🤝</i>情感陪伴</a></li>
+                    <li><a href="#" class="menu-link"><i>✨</i>新人扶持</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="content-area">
+                <!-- Live Grid Section -->
+                <section class="live-section">
+                    <h2>
+                        正在直播
+                        <a href="#" class="section-link">查看更多 &gt;</a>
+                    </h2>
+                    <div class="live-grid">
+                        <!-- Card 1 -->
+                        <article class="live-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/live1/400/560" alt="直播封面">
+                                <div class="live-badge"><div class="live-dot"></div>直播中</div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">甜美小桃子 | 晚安电台 🌙</h3>
+                                <div class="card-meta">
+                                    <span>👤 12.5w 观看</span>
+                                    <div class="card-tags">
+                                        <span>聊天</span>
+                                        <span>ASMR</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="live-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/live2/400/560" alt="直播封面">
+                                <div class="live-badge"><div class="live-dot"></div>直播中</div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">电竞阿杰 | 英雄联盟上分中</h3>
+                                <div class="card-meta">
+                                    <span>👤 8.2w 观看</span>
+                                    <div class="card-tags">
+                                        <span>游戏</span>
+                                        <span>LOL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="live-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/live3/400/560" alt="直播封面">
+                                <div class="live-badge"><div class="live-dot"></div>直播中</div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">舞动奇迹 | 热舞串烧</h3>
+                                <div class="card-meta">
+                                    <span>👤 5.6w 观看</span>
+                                    <div class="card-tags">
+                                        <span>舞蹈</span>
+                                        <span>热舞</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="live-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/live4/400/560" alt="直播封面">
+                                <div class="live-badge"><div class="live-dot"></div>直播中</div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">吉他手小李 | 民谣之夜</h3>
+                                <div class="card-meta">
+                                    <span>👤 3.1w 观看</span>
+                                    <div class="card-tags">
+                                        <span>音乐</span>
+                                        <span>吉他</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Card 5 -->
+                        <article class="live-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/live5/400/560" alt="直播封面">
+                                <div class="live-badge"><div class="live-dot"></div>直播中</div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">幸运小妹 | 欢迎回家</h3>
+                                <div class="card-meta">
+                                    <span>👤 2.8w 观看</span>
+                                    <div class="card-tags">
+                                        <span>聊天</span>
+                                        <span>陪伴</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                         <!-- Card 6 -->
+                         <article class="live-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/live6/400/560" alt="直播封面">
+                                <div class="live-badge"><div class="live-dot"></div>直播中</div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">户外探险队 | 登山日记</h3>
+                                <div class="card-meta">
+                                    <span>👤 1.5w 观看</span>
+                                    <div class="card-tags">
+                                        <span>户外</span>
+                                        <span>探险</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="features-section">
+                    <h2>为什么选择蜜桃直播</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">📡</div>
+                            <h3>高清流畅</h3>
+                            <p>支持多种清晰度切换，保证您在观看直播时获得丝滑流畅的视觉体验。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <h3>安全可靠</h3>
+                            <p>严格的审核机制，实名认证体系，营造绿色健康的网络直播环境。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎁</div>
+                            <h3>丰富福利</h3>
+                            <p>每日签到、任务奖励、新人礼包，让每一位用户都能享受更多乐趣。</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>蜜桃直播</h3>
+                <p>致力于打造最优质的实时互动娱乐平台，连接每一个热爱生活的你。</p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">联系合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">违规举报</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">用户社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 蜜桃直播 版权所有 | 未成年人请在监护人陪同下使用
+        </div>
+    </footer>
+
+</body>
+  </html>
