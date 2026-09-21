@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打铁花-国家级非物质文化遗产民俗艺术与传承之旅</title>
+    <meta name="description" content="打铁花是中国传统民俗文化瑰宝，国家级非物质文化遗产。本站详细介绍打铁花的历史渊源、表演技艺、观赏指南及传承人故事，带您领略这一“火树银花”的震撼魅力。">
+    <meta name="keywords" content="打铁花, 铁花, 焰火, 民俗文化, 非遗, 传统技艺, 火树银花, 焦作打铁花">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #ff6f00;
+            --dark-bg: #1a0505;
+            --card-bg: #2d0b0b;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --gold-accent: #ffd700;
+            --font-stack: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gold-accent);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 111, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(26,5,5,0.3), var(--dark-bg)), 
+                        url('https://picsum.photos/seed/taohua1/1920/1080.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: #f0f0f0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 35px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+        }
+
+        /* History Section */
+        .history {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .history-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--gold-accent);
+        }
+
+        .history-text p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        .history-image {
+            position: relative;
+        }
+
+        .history-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 111, 0, 0.2);
+        }
+
+        .history-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .history-badge .number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .history-badge .label {
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        /* Techniques Section */
+        .techniques {
+            padding: 80px 0;
+            background-color: #2a0a0a;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--gold-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            gap: 10px;
+        }
+
+        /* Viewing Guide Section */
+        .guide {
+            padding: 80px 0;
+            background: var(--dark-bg);
+        }
+
+        .guide-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 30px;
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 12px;
+            align-items: flex-start;
+        }
+
+        .guide-icon {
+            background: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .guide-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .guide-text p {
+            color: var(--text-muted);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #2a0a0a;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .faq-question:hover {
+            color: var(--gold-accent);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-muted);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0202;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 111, 0, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for single file demo */
+            }
+
+            .history-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .history-badge {
+                right: 0;
+            }
+
+            .guide-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span>✦</span> 铁花非遗
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#history">历史渊源</a></li>
+                    <li><a href="#techniques">技艺特色</a></li>
+                    <li><a href="#guide">观赏指南</a></li>
+                    <li><a href="#faq">常见问答</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>千年火树银花</h1>
+                <p>感受打铁花这一古老民俗艺术的极致震撼与东方美学。国家级非物质文化遗产，寓意“花开富贵”，是火与钢的浪漫共舞。</p>
+                <a href="#history" class="cta-button">探索非遗魅力</a>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="history">
+            <div class="container">
+                <div class="history-grid">
+                    <div class="history-text">
+                        <h2>历史渊源与寓意</h2>
+                        <p>打铁花，源于春秋战国，盛于宋元，是中国古代匠人在冶炼铁水时，将高温熔化的铁水击向夜空，使其瞬间绽放成万朵金花的民间绝技。它不仅是古代工匠对火的掌控艺术，更承载着祈求风调雨顺、国泰民安的美好愿景。</p>
+                        <p>作为“中国四大名花”之一，打铁花被誉为“黄河文化”的活化石。它不同于西方的烟花，不打药粉，全凭赤膊上阵的艺人，用柳木勺舀起1600度以上的铁水，用力击向夜空，形成漫天金雨，极具视觉冲击力。</p>
+                        <p>2008年，打铁花被列入国家级非物质文化遗产名录，成为中华文明中璀璨夺目的瑰宝。</p>
+                    </div>
+                    <div class="history-image">
+                        <img src="https://picsum.photos/seed/taohua2/600/400.jpg" alt="打铁花表演场景">
+                        <div class="history-badge">
+                            <span class="number">2008</span>
+                            <span class="label">入选非遗名录</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques Section -->
+        <section id="techniques" class="techniques">
+            <div class="container">
+                <h2 class="section-title">技艺特色</h2>
+                <p class="section-subtitle">打铁花并非简单的燃放，而是一项集冶金、力学、美术于一体的复杂民间工艺。</p>
+                
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/taohua3/400/300.jpg" alt="熔炉场景">
+                        </div>
+                        <div class="card-content">
+                            <h3>熔炼铁水</h3>
+                            <p>选用优质生铁，通过鼓风机高温熔炼，将铁块化为赤红滚烫的铁水，温度需高达1600度以上。</p>
+                            <a href="#" class="card-link">查看熔炼工艺 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/taohua4/400/300.jpg" alt="击打瞬间">
+                        </div>
+                        <div class="card-content">
+                            <h3>击打绽放</h3>
+                            <p>艺人手持柳木勺舀起铁水，在瞬间用力击向空中或墙壁。铁水受空气阻力分散，表面氧化瞬间绽放成万朵火花。</p>
+                            <a href="#" class="card-link">学习表演技巧 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/taohua5/400/300.jpg" alt="火树银花">
+                        </div>
+                        <div class="card-content">
+                            <h3>火树银花</h3>
+                            <p>随着鼓声节奏，多道铁花交织，形成火树银花不夜天的壮观景象。每一朵火花都是独一无二的瞬间艺术。</p>
+                            <a href="#" class="card-link">欣赏艺术之美 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Viewing Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container">
+                <h2 class="section-title">观赏指南</h2>
+                <p class="section-subtitle">如何才能更好地体验这一震撼的民俗盛宴？</p>
+
+                <div class="guide-container">
+                    <div class="guide-item">
+                        <div class="guide-icon">📍</div>
+                        <div class="guide-text">
+                            <h3>最佳观赏地点</h3>
+                            <p>目前国内打铁花主要流行于河南、山西、陕西等地。其中，河南开封的“东京梦华”实景演出、山西泽州等地都有非常成熟的表演。建议提前查询当地非遗文化园或景区的演出时间表。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-item">
+                        <div class="guide-icon">🕒</div>
+                        <div class="guide-text">
+                            <h3>演出时间</h3>
+                            <p>打铁花通常在重大节庆、庙会或特定民俗活动中进行。常见的演出时段多在夜幕降临后的20:00-22:00之间，具体时间请以当日公告为准。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-item">
+                        <div class="guide-icon">🛡️</div>
+                        <div class="guide-text">
+                            <h3>安全防护</h3>
+                            <p>观看表演时，请务必保持安全距离。铁花飞溅温度极高，切勿在表演区域内使用易燃物品，儿童需在成人监护下观看，注意防火安全。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问答</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">打铁花和烟花有什么区别？</div>
+                    <div class="faq-answer">
+                        <p>主要区别在于材料和制作工艺。打铁花使用的是熔化的铁水，温度高达1600度，燃烧时间更长，视觉冲击力更强，且不能带药粉；而烟花是化学药剂燃烧，观赏性侧重于色彩和声音。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">表演者会被烫伤吗？</div>
+                    <div class="faq-answer">
+                        <p>虽然表演者赤膊上阵，但经过长期训练，他们掌握了精准的力度和时机。同时，现场会有专业人员协助，且柳木勺经过特殊处理，能有效反射热量。尽管如此，表演仍是一项高风险的技艺。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">普通人可以学习打铁花吗？</div>
+                    <div class="faq-answer">
+                        <p>打铁花对体力和反应速度要求极高，且存在高温烫伤风险，不建议普通爱好者私自尝试。如想体验，可参加正规景区组织的互动体验项目（通常会有专业保护措施）。</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">✦ 铁花非遗</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        致力于传承与推广中国非物质文化遗产，让更多人了解并喜爱这一古老而热烈的民俗艺术。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#history">历史渊源</a></li>
+                        <li><a href="#techniques">技艺特色</a></li>
+                        <li><a href="#guide">观赏指南</a></li>
+                        <li><a href="#faq">常见问答</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">非遗保护名录</a></li>
+                        <li><a href="#">民俗文化论坛</a></li>
+                        <li><a href="#">传承人专访</a></li>
+                        <li><a href="#">研学基地</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 打铁花非遗文化展示平台. All Rights Reserved. 仅供演示设计使用。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
