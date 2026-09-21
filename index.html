@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝地求生辅助-专业游戏工具与安全使用指南</title>
+    <meta name="description" content="提供绝地求生辅助工具的综合指南，包括透视、自瞄、压枪等功能的详细介绍、安全使用建议及防封号注意事项，帮助玩家提升游戏体验。">
+    <meta name="keywords" content="绝地求生辅助,吃鸡辅助,游戏外挂,游戏工具,防封号技巧">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --primary-dark: #27ae60;
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --accent-red: #e74c3c;
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/pubgmap/1600/600') no-repeat center center/cover;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Tool Comparison Table */
+        .comparison-section {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(0,0,0,0.2);
+            color: var(--primary-color);
+        }
+
+        tr:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        /* Safety Guide */
+        .safety-guide {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .guide-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(46, 204, 113, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .guide-item h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .guide-item p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 50px 20px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile view */
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>GameHelper</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">功能特性</a></li>
+                    <li><a href="#comparison">版本对比</a></li>
+                    <li><a href="#safety">防封指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="nav-cta">立即获取</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>提升战斗效率，优化游戏体验</h1>
+            <p>专注绝地求生辅助工具的深度解析与安全使用方案，助您在游戏中获得更多乐趣。</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">查看最新版本</a>
+                <a href="#guide" class="btn btn-secondary">阅读使用教程</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 功能介绍 -->
+        <section id="features">
+            <h2 class="section-title">核心功能解析</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>智能自瞄辅助</h3>
+                    <p>基于AI算法的自动瞄准系统，能够精准识别敌人头部与身体，提供流畅且符合物理逻辑的射击体验。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3>透视与雷达</h3>
+                    <p>实时显示敌方位置、车辆状态及物资分布，在决赛圈中掌握先机，避免被伏地魔偷袭。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🔫</div>
+                    <h3>压枪脚本</h3>
+                    <p>自动修正后坐力，解决高倍镜下枪口上扬问题，确保连发子弹集中，大幅提高爆头率。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>防封号保护</h3>
+                    <p>内置多种反检测机制，模拟正常玩家操作习惯，降低被系统检测到的风险。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 版本对比 -->
+        <section id="comparison">
+            <h2 class="section-title">版本功能对比</h2>
+            <div class="comparison-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>功能模块</th>
+                            <th>免费版</th>
+                            <th>专业版</th>
+                            <th>永久版</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>自瞄功能</td>
+                            <td>基础瞄准</td>
+                            <td>高精度瞄准</td>
+                            <td>高精度瞄准</td>
+                        </tr>
+                        <tr>
+                            <td>透视显示</td>
+                            <td>仅显示人物</td>
+                            <td>显示人物、车辆、物资</td>
+                            <td>显示人物、车辆、物资</td>
+                        </tr>
+                        <tr>
+                            <td>防封保护</td>
+                            <td>基础保护</td>
+                            <td>高级保护</td>
+                            <td>最高级保护</td>
+                        </tr>
+                        <tr>
+                            <td>更新频率</td>
+                            <td>月更</td>
+                            <td>周更</td>
+                            <td>周更</td>
+                        </tr>
+                        <tr>
+                            <td>客服支持</td>
+                            <td>邮件支持</td>
+                            <td>一对一指导</td>
+                            <td>一对一指导</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 防封指南 -->
+        <section id="safety">
+            <h2 class="section-title">安全使用指南</h2>
+            <div class="safety-guide">
+                <div class="guide-item">
+                    <h3>避免公开使用</h3>
+                    <p>尽量不要在公开的语音频道或游戏内聊天框中提及辅助工具，避免引来其他玩家的注意和举报。</p>
+                </div>
+                <div class="guide-item">
+                    <h3>定期清理缓存</h3>
+                    <p>建议定期清理浏览器缓存和游戏客户端缓存，防止被系统抓取异常数据。</p>
+                </div>
+                <div class="guide-item">
+                    <h3>混合使用策略</h3>
+                    <p>建议偶尔关闭辅助功能进行正常游戏，模拟真实玩家的操作波动，降低被识别为脚本的风险。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">使用辅助会被永久封号吗？</div>
+                <div class="faq-answer">
+                    <p>任何辅助工具都存在一定的风险。本站提供的工具经过多次更新优化，采用了先进的反检测技术，但在极端情况下仍有可能导致账号封禁。请用户根据自身情况谨慎选择。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何安装和配置？</div>
+                <div class="faq-answer">
+                    <p>下载安装包后，请先关闭杀毒软件的实时监控（如有误报请添加信任）。解压文件，按照说明文档中的步骤进行导入和配置，重启游戏即可生效。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">支持哪些游戏版本？</div>
+                <div class="faq-answer">
+                    <p>目前主要支持绝地求生（PUBG）官方最新版本及测试服版本，兼容性良好，请确保您的游戏版本与工具版本匹配。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="color: #666; font-size: 14px;">GameHelper 专注于为玩家提供优质的游戏辅助工具与资讯服务，致力于打造最安全、最稳定的使用体验。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">下载中心</a></li>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">版本更新</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>法律声明</h4>
+                <ul>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 GameHelper. All rights reserved. 本站内容仅供技术交流与学习使用。</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
