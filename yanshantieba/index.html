@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盐山贴吧-盐山县本地生活、资讯与社区互动平台</title>
+    <meta name="description" content="盐山贴吧是盐山县本地最大的在线社区，提供盐山新闻资讯、二手交易、房屋租售、求职招聘、同城交友及本地生活服务信息，是盐山人民获取信息、交流互动的首选平台。">
+    <meta name="keywords" content="盐山贴吧, 盐山县, 盐山本地生活, 盐山二手交易, 盐山招聘, 盐山房产, 盐山论坛">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f0f4f8;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e1e4e8;
+            --white: #ffffff;
+            --accent-color: #ff6b00;
+            --radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 8px;
+            border-radius: var(--radius);
+            display: flex;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 12px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Main Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr 300px;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-list .count {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Content Area */
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tab {
+            padding: 6px 0;
+            color: var(--text-light);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-size: 15px;
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Post List */
+        .post-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .post-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .post-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ddd;
+            flex-shrink: 0;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .username {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .post-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .post-content {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            background-color: #eef4fc;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .post-footer {
+            display: flex;
+            gap: 24px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .action-item:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hot Topics */
+        .hot-topic-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .hot-rank {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ddd;
+            width: 24px;
+            text-align: center;
+        }
+
+        .hot-rank.top-3 {
+            color: var(--accent-color);
+        }
+
+        .hot-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .hot-info span {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .notice-board {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .notice-item {
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            color: var(--text-main);
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-item b {
+            color: var(--accent-color);
+            margin-right: 6px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-grid {
+                grid-template-columns: 200px 1fr;
+            }
+            .sidebar-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-left {
+                display: none;
+            }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>盐山贴吧</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新话题</a></li>
+                    <li><a href="#">本地资讯</a></li>
+                    <li><a href="#">二手交易</a></li>
+                    <li><a href="#">房产信息</a></li>
+                    <li><a href="#">招聘求职</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">发布</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>连接盐山，分享生活</h1>
+                <p>这里是盐山县本地最大的网络社区，汇聚全县热点、便民信息与邻里互动。</p>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索盐山贴吧、帖子或用户...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-grid">
+            <!-- Left Sidebar -->
+            <aside class="sidebar-left">
+                <div class="category-card">
+                    <h3 class="category-title">热门板块</h3>
+                    <ul class="category-list">
+                        <li><a href="#"><span>盐山新闻</span><span class="count">1.2w</span></a></li>
+                        <li><a href="#"><span>二手交易</span><span class="count">8.5k</span></a></li>
+                        <li><a href="#"><span>房产租售</span><span class="count">3.2k</span></a></li>
+                        <li><a href="#"><span>招聘求职</span><span class="count">5.6k</span></a></li>
+                        <li><a href="#"><span>吃喝玩乐</span><span class="count">9.1k</span></a></li>
+                        <li><a href="#"><span>情感交友</span><span class="count">2.3k</span></a></li>
+                        <li><a href="#"><span>寻人寻物</span><span class="count">1.1k</span></a></li>
+                        <li><a href="#"><span>盐山杂谈</span><span class="count">4.7k</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <section class="content-main">
+                <div class="section-header">
+                    <h2 class="section-title">最新帖子</h2>
+                    <div class="tabs">
+                        <span class="tab active">综合</span>
+                        <span class="tab">精华</span>
+                        <span class="tab">热榜</span>
+                    </div>
+                </div>
+
+                <div class="post-list">
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="avatar"></div>
+                            <div class="user-info">
+                                <span class="username">盐山老表</span>
+                                <span class="post-meta">10分钟前 · 来自 iPhone</span>
+                            </div>
+                        </div>
+                        <h3 class="post-title"><a href="#">盐山县人民医院新院区建设进度如何了？听说很快就要投入使用？</a></h3>
+                        <div class="post-tags">
+                            <span class="tag">#盐山新闻</span>
+                            <span class="tag">#民生关注</span>
+                        </div>
+                        <p class="post-content">最近路过工地看到围挡拆了不少，想知道具体什么时候能开始试运行？大家有确切消息吗？</p>
+                        <div class="post-footer">
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 128 回复</span>
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> 456 收藏</span>
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> 分享</span>
+                        </div>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="avatar"></div>
+                            <div class="user-info">
+                                <span class="username">城南旧事</span>
+                                <span class="post-meta">35分钟前 · 来自 Android</span>
+                            </div>
+                        </div>
+                        <h3 class="post-title"><a href="#">【出售】家里闲置的跑步机，九成新，带功能调节，自提免费送</a></h3>
+                        <div class="post-tags">
+                            <span class="tag">#二手交易</span>
+                        </div>
+                        <p class="post-content">因为健身计划搁浅，跑步机闲置很久了。功能正常，买的时候三千多，现在一百块带走，只要有人来拉走就行。</p>
+                        <div class="post-footer">
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 32 回复</span>
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> 89 收藏</span>
+                        </div>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="avatar"></div>
+                            <div class="user-info">
+                                <span class="username">盐山交警</span>
+                                <span class="post-meta">1小时前 · 官方发布</span>
+                            </div>
+                        </div>
+                        <h3 class="post-title"><a href="#">关于开展全县交通秩序集中整治行动的通知</a></h3>
+                        <div class="post-tags">
+                            <span class="tag">#官方公告</span>
+                            <span class="tag">#交通安全</span>
+                        </div>
+                        <p class="post-content">为营造安全、畅通的道路交通环境，交管大队决定即日起开展为期一个月的专项整治行动，重点查处酒驾、醉驾及不礼让行人等违法行为。</p>
+                        <div class="post-footer">
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 856 回复</span>
+                            <span class="action-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> 2102 收藏</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-right">
+                <div class="category-card">
+                    <h3 class="category-title">今日热榜</h3>
+                    <div class="hot-topic-item">
+                        <span class="hot-rank top-3">1</span>
+                        <div class="hot-info">
+                            <h4><a href="#">盐山县2024年义务教育招生计划发布</a></h4>
+                            <span>1.5万热度</span>
+                        </div>
+                    </div>
+                    <div class="hot-topic-item">
+                        <span class="hot-rank top-3">2</span>
+                        <div class="hot-info">
+                            <h4><a href="#">寻找走失儿童：3岁男孩，身穿黄色羽绒服</a></h4>
+                            <span>8900热度</span>
+                        </div>
+                    </div>
+                    <div class="hot-topic-item">
+                        <span class="hot-rank top-3">3</span>
+                        <div class="hot-info">
+                            <h4><a href="#">盐山某路段施工，请注意绕行</a></h4>
+                            <span>6200热度</span>
+                        </div>
+                    </div>
+                    <div class="hot-topic-item">
+                        <span class="hot-rank">4</span>
+                        <div class="hot-info">
+                            <h4><a href="#">【招聘】本地超市诚聘收银员，包吃住</a></h4>
+                            <span>4500热度</span>
+                        </div>
+                    </div>
+                    <div class="hot-topic-item">
+                        <span class="hot-rank">5</span>
+                        <div class="hot-info">
+                            <h4><a href="#">吐槽：盐山早高峰的堵车情况</a></h4>
+                            <span>3800热度</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice-board">
+                    <h3 class="category-title">社区公告</h3>
+                    <div class="notice-item"><b>通知：</b> 请大家文明发帖，严禁发布违规广告。</div>
+                    <div class="notice-item"><b>提醒：</b> 二手交易请务必当面交易，注意财产安全。</div>
+                    <div class="notice-item"><b>活动：</b> 加入盐山贴吧VIP，解锁更多隐藏功能。</div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于盐山贴吧</h3>
+                    <p style="font-size: 14px; line-height: 1.8;">盐山贴吧致力于为盐山县网民提供最优质的本地生活信息服务，打造最具活力的盐山网络社区。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系管理员</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>服务板块</h3>
+                    <ul>
+                        <li><a href="#">本地新闻</a></li>
+                        <li><a href="#">房产资讯</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                        <li><a href="#">二手市场</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>邮箱：contact@yanshan.tieba</li>
+                        <li>电话：0317-XXXXXXX</li>
+                        <li>地址：河北省沧州市盐山县XX路XX号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 盐山贴吧. All Rights Reserved. 本站内容仅供参考，不代表本站立场。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
